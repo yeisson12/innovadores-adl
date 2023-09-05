@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, 
+    Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue', sans-serif;
+    font-size: 19px;
+    color: #f5f5f5;
+}
+
+.content-principal {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 16% 84%;
+    grid-template-rows: auto;
+    grid-template-areas: "nav content";
+    background-color: black;
+    
+ 
+}
+
+/* -------------------------------------------------- navegador*/
+.nav {
+    grid-area: nav;
+    padding-left: 12px;
+    position: relative;
+    height: 100%;
+}
+
+nav {
+    position: fixed;
+}
+
+.nav .h1{
+    margin-top: 40px;
+    margin-bottom: 35px;
+    padding-left: 10px;
+}
+
+.nave{
+    display: grid;
+    grid-template-columns: 40px 50px;
+    margin-bottom: 5px;
+    width: 200px;
+    height: 50px;
+    align-items: center;
+    padding-left: 10px;
+}
+.nave .t{
+    margin-bottom: 5px;
+}
+.nave p{
+    font-size: 16px;
+
+}
+.nave:hover{
+    border-radius: 10px;
+    background-color: rgb(26, 26, 26);
+    width: 100% ;
+    padding-left: 10px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    
+    
+}
+
+.nav .mas {
+
+    margin-top: 110px;
+}
+
+
+
+/* -------------------------------------------------- contenido principal*/
+.content {
+    grid-area: content;
+    border-left: 1px solid rgb(38, 38, 38);
+    display: flex;
+    justify-content: center;
+   
+}
+
+.content-perfil {
+    padding: 30px 20px 0px;
+    margin: 0px 150.1px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.nombre {
+    font-size: 16px;
+    padding-top: 5px;
+    display: grid;
+    grid-template-columns:321px 173px 252px 100px;
+    grid-template-rows: 53px 38px 50px;
+    grid-template-areas: "imagen-perfil Title_name editar confi"
+                         "imagen-perfil reacciones reacciones reacciones"
+                         "imagen-perfil user user .";
+}
+
+.imagen-perfil {
+    grid-area: imagen-perfil;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.imagen-perfil img {
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    margin-right: 40px;
+
+}
+
+
+.Title_name{
+    grid-area: Title_name;
+}
+
+.Title_name h2{
+    font-size: 20px;
+    color: #f5f5f5;
+}
+
+.editar {
+    grid-area: editar;
+    margin: 0px 0px 0px 20px;
+   
+}
+
+.editar a {
+    color: #f5f5f5;
+    padding: 7px 16px;
+    border-radius: 8px;
+    background: #363636;
+    text-decoration: none;
+    font-size: 14px ;
+    font-weight: bold;
+
+}
+.confi{
+    grid-area:confi;
+    padding-top: 2px;
+}
+
+.reacciones {
+    grid-area: reacciones;
+    display: flex;
+}
+
+.reacciones p {
+    margin-right: 40px;
+    font-size: 16px ;
+}
+.user{
+    grid-area: user;
+}
+.user p{
+    font-size: 14px ;
+}
+
+.material-symbols-outlined {
+
+    font-size: 84px !important;
+}
+
+.nuevo{
+    border-bottom: 1px solid rgb(38, 38, 38);
+    height: 200px;
+    margin-bottom: 10px;
+    width: 100;
+}
+
+/*------------------------------galeria----------------------------------*/
+
+.galeria{
+    height: 100%;
+}
+
+.pge-content{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.pge a{
+    text-decoration: none;
+}
+
+.pge{
+    margin-right: 60px;
+}
+.pge span{
+    font-size: 14px;
+    padding-left: 7px;
+}
+
+.fotos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+.img{
+    width: 300px;
+    height: 300px;
+}
+
+.img img{
+    width: 100%;
+    height: 100%;
+}
+
+/*----------------------------------footer----------------------------------*/
+
+.footer{
+    padding: 5px;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.links a{
+    margin:3px;
+    text-decoration: none;
+    font-size: 12px;
+    color: #737373;
+
+}
