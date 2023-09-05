@@ -2,11 +2,12 @@
     margin: 0;
     padding: 0;
     font-family: -apple-system, -apple-system,
-    BlinkMacSystemFont, 'Segoe UI', Roboto, 
-    Oxygen, Ubuntu, Cantarell, 'Open Sans',
-    'Helvetica Neue', sans-serif;
+        BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Oxygen, Ubuntu, Cantarell, 'Open Sans',
+        'Helvetica Neue', sans-serif;
     font-size: 19px;
-    color: #f5f5f5;
+    color: var(--color);
+    background-color: var(--background-color);
 }
 
 .content-principal {
@@ -16,9 +17,6 @@
     grid-template-columns: 16% 84%;
     grid-template-rows: auto;
     grid-template-areas: "nav content";
-    background-color: black;
-    
- 
 }
 
 /* -------------------------------------------------- navegador*/
@@ -26,82 +24,90 @@
     grid-area: nav;
     padding-left: 12px;
     position: relative;
-    height: 100%;
+    border-right: var(--border-right);
 }
 
 nav {
-    position: fixed;
+    position: fixed ;
+    left: 0;
 }
 
-.nav .h1{
+.nav .h1 {
     margin-top: 40px;
     margin-bottom: 35px;
     padding-left: 10px;
 }
 
-.nave{
+.ins {
+    display: none;
+}
+
+.nave {
     display: grid;
     grid-template-columns: 40px 50px;
     margin-bottom: 5px;
-    width: 200px;
+    width: min-content;
     height: 50px;
     align-items: center;
-    padding-left: 10px;
+    padding-left: 20px;
 }
-.nave .t{
+
+.nave .t {
     margin-bottom: 5px;
 }
-.nave p{
-    font-size: 16px;
 
+.nave p {
+    font-size: 16px;
 }
-.nave:hover{
+
+.nave:hover {
     border-radius: 10px;
-    background-color: rgb(26, 26, 26);
-    width: 100% ;
+    background: var(--background-nav);
+    width: 90%;
     padding-left: 10px;
 }
 
 .nav a {
     text-decoration: none;
-    color: white;
     font-size: 16px;
-    
-    
 }
 
 .nav .mas {
-
     margin-top: 110px;
 }
 
-
+.x1n2onr6 {
+    fill: var(--fill);
+}
 
 /* -------------------------------------------------- contenido principal*/
 .content {
     grid-area: content;
-    border-left: 1px solid rgb(38, 38, 38);
-    display: flex;
-    justify-content: center;
-   
+    width: 80%;
+    position: relative;
+    left: 7%;
 }
 
 .content-perfil {
     padding: 30px 20px 0px;
-    margin: 0px 150.1px;
     display: flex;
     flex-direction: column;
     width: 100%;
 }
+
+.perfil{
+    width: 100%;
+}
+
 .nombre {
     font-size: 16px;
     padding-top: 5px;
     display: grid;
-    grid-template-columns:321px 173px 252px 100px;
+    grid-template-columns: 37% 173px 252px 5%;
     grid-template-rows: 53px 38px 50px;
     grid-template-areas: "imagen-perfil Title_name editar confi"
-                         "imagen-perfil reacciones reacciones reacciones"
-                         "imagen-perfil user user .";
+        "imagen-perfil reacciones reacciones reacciones"
+        "imagen-perfil user user .";
 }
 
 .imagen-perfil {
@@ -117,38 +123,37 @@ nav {
     width: 150px;
     height: 150px;
     margin-right: 40px;
-
 }
 
 
-.Title_name{
+.Title_name {
     grid-area: Title_name;
+    width: 100%;
 }
 
-.Title_name h2{
+.Title_name h2 {
     font-size: 20px;
-    color: #f5f5f5;
 }
 
 .editar {
     grid-area: editar;
     margin: 0px 0px 0px 20px;
-   
+    width: 100%;
 }
 
 .editar a {
-    color: #f5f5f5;
     padding: 7px 16px;
     border-radius: 8px;
-    background: #363636;
+    background-color: var(--background-editar);
     text-decoration: none;
-    font-size: 14px ;
+    font-size: 14px;
     font-weight: bold;
-
 }
-.confi{
-    grid-area:confi;
+
+.confi {
+    grid-area: confi;
     padding-top: 2px;
+    width: max-content;
 }
 
 .reacciones {
@@ -158,13 +163,15 @@ nav {
 
 .reacciones p {
     margin-right: 40px;
-    font-size: 16px ;
+    font-size: 16px;
 }
-.user{
+
+.user {
     grid-area: user;
 }
-.user p{
-    font-size: 14px ;
+
+.user p {
+    font-size: 14px;
 }
 
 .material-symbols-outlined {
@@ -172,7 +179,7 @@ nav {
     font-size: 84px !important;
 }
 
-.nuevo{
+.nuevo {
     border-bottom: 1px solid rgb(38, 38, 38);
     height: 200px;
     margin-bottom: 10px;
@@ -181,60 +188,224 @@ nav {
 
 /*------------------------------galeria----------------------------------*/
 
-.galeria{
+.galeria {
     height: 100%;
+    width: 100%;
 }
 
-.pge-content{
+.pge-content {
     display: flex;
     width: 100%;
     justify-content: center;
     margin-bottom: 15px;
 }
-.pge a{
+
+.pge a {
     text-decoration: none;
 }
 
-.pge{
+.pge {
     margin-right: 60px;
 }
-.pge span{
-    font-size: 14px;
+
+.pge span {
+    font-size: 12px;
     padding-left: 7px;
 }
 
-.fotos{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2px;
-}
-.img{
-    width: 300px;
-    height: 300px;
+.fotos {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: repeat(3, 38%);
+    gap: 4px;
 }
 
-.img img{
+.img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.img img {
     width: 100%;
     height: 100%;
 }
 
+.img .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(48, 50, 50, 0.314);
+    color: white;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.overlay p {
+    background: #36363629;
+    margin-left: 5px;
+}
+
+.img:hover .overlay {
+    opacity: 1;
+}
+
+.overlay-text {
+    font-size: 18px;
+}
+
 /*----------------------------------footer----------------------------------*/
 
-.footer{
+.footer {
     padding: 5px;
 }
 
-.links{
+.links {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
 }
 
-.links a{
-    margin:3px;
+.links a {
+    margin: 3px;
     text-decoration: none;
     font-size: 12px;
     color: #737373;
-
 }
+
+/*------------------ medias---------------------------------------------------*/
+@media (prefers-color-scheme: light) {
+    :root {
+        --background-color: #ffffff;
+        --color: black;
+
+        .editar a {
+            --background-editar: #efefef;
+        }
+
+        .editar a:hover {
+            --background-editar: #dbdbdb;
+        }
+
+        .nav:hover {
+            --background-nav: rgb(242, 242, 242);
+        }
+
+        .x1n2onr6 {
+            --fill: rgb(24, 24, 24);
+        }
+
+        .nav {
+            border-right: 1px solid #dbdbdb;
+        }
+
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: black;
+        --color: #f5f5f5;
+
+        .editar a {
+            --background-editar: #363636;
+        }
+
+        .editar a:hover {
+            --background-editar: #262626;
+        }
+
+        .nav:hover {
+            --background-nav: #1a1a1a;
+        }
+
+        .x1n2onr6 {
+            --fill: rgb(245, 245, 245);
+        }
+
+        .nav {
+            --border-right: 1px solid #262626;
+        }
+
+    }
+}
+
+@media (max-width: 1234px) {
+    .t {
+        display: none;
+    }
+
+    .content{
+        width: 100%;
+        left: -10%;
+    }
+
+    .nav{
+        width: 55px;
+    }
+
+    .nave:hover {
+        border-radius: 10px;
+        background: var(--background-nav);
+        padding-left: 10px;
+        width: min-content;
+    }
+
+    .nave {
+        display: grid;
+        grid-template-columns: 35px;
+        margin-bottom: 0px;
+        width: min-content;
+        align-items: center;
+        padding-left: 20px;
+    }
+
+    .nav .mas {
+        margin-top: 0px;
+    }
+
+    .nave-ins:hover {
+        border-radius: 10px;
+        background: var(--background-nav);
+        padding-left: 10px;
+        width: min-content;
+
+    }
+
+    .nave-ins {
+        display: grid;
+        grid-template-columns: 35px;
+        margin-bottom: 30px;
+        width: min-content;
+        height: 50px;
+        align-items: center;
+        padding-left: 20px;
+        margin-top: 28px;
+    }
+
+    .ins {
+        display: inline;
+    }
+
+    nav .h1 {
+        display: none;
+    }
+
+    .content-principal {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 16% 84%;
+        grid-template-rows: auto;
+        grid-template-areas: "nav content";
+
+    }
+}
+
+@media (max-width: 766px) {}
