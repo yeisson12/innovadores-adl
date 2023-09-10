@@ -12,7 +12,7 @@
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 20% 75%;
+  grid-template-columns: 20% 80%;
   grid-template-rows: 100%;
   grid-template-areas: "nav content";
   position: relative;
@@ -70,7 +70,6 @@
   background-color: #1a1a1a00;
 }
 
-
 .navegador:hover {
   border-radius: 10px;
   background: var(--background-nav);
@@ -91,43 +90,37 @@
 }
 
 .content-perfil {
-  padding: 30px 20px 0px;
+  padding: 30px 20px 0px 20px;
   display: flex;
   flex-direction: column;
-  width: 950px;
-}
-
-.perfil {
-  width: 100%;
+  margin-right: 13%;
+  margin-left: 7%;
 }
 
 .nombre {
   font-size: 16px;
   padding-top: 5px;
   display: grid;
-  grid-template-columns: 35% 173px 252px 9%;
+  grid-template-columns: 32% 190px 252px 9%;
   grid-template-rows: 53px 38px 75px 200px;
   grid-template-areas:
     "imagen-perfil title_name editar confi"
     "imagen-perfil reacciones reacciones reacciones"
     "imagen-perfil user user user"
     "nuevo nuevo nuevo .";
-
 }
 
 .imagen-perfil {
   grid-area: imagen-perfil;
-  width: 100%;
   height: 150px;
   display: flex;
-  justify-content: center;
+  padding-left: 60px;
 }
 
 .imagen-perfil img {
   border-radius: 100%;
   width: 150px;
   height: 150px;
-  margin-right: 40px;
 }
 
 .title_name {
@@ -183,15 +176,32 @@
 }
 
 .nuevo {
-    grid-area: nuevo;
-    margin-top: 50px;
-  padding-left: 80px;
-
+  grid-area: nuevo;
+  margin-top: 40px;
+  padding-left: 50px;
 }
 
 .nuevo p {
   font-size: 12px;
-  
+  padding-left: 20px;
+  font-weight: bold;
+}
+
+.nue {
+  width: 80px;
+  height: 80px;
+  border: var(--border);
+  border-radius: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.nuev {
+  width: 50px;
+  height: 50px;
 }
 /*------------------------------galeria----------------------------------*/
 
@@ -235,7 +245,6 @@
 
 .img {
   width: 100%;
-  height: 100%;
   position: relative;
 }
 
@@ -292,6 +301,10 @@
   color: #737373;
 }
 
+.nav2 {
+  display: none;
+}
+
 /*------------------ medias---------------------------------------------------*/
 @media (prefers-color-scheme: light) {
   :root {
@@ -315,7 +328,9 @@
     }
 
     .nav,
+    .nav2,
     .nuevo,
+    .nue,
     .pge-content {
       --border: 1px solid #dbdbdb;
     }
@@ -344,7 +359,9 @@
     }
 
     .nav,
+    .nav2,
     .nuevo,
+    .nue,
     .pge-content {
       --border: 1px solid #262626;
     }
@@ -416,24 +433,6 @@
   }
 }
 
-@media (max-width: 874px) {
-  .nombre {
-    font-size: 16px;
-    padding-top: 5px;
-    display: grid;
-    grid-template-columns: 35% 170px 252px 9%;
-    grid-template-rows: 53px 38px 50px 200px;
-    grid-template-areas:
-      "imagen-perfil title_name editar confi"
-      "imagen-perfil reacciones reacciones reacciones"
-      "imagen-perfil user user ."
-      "nuevo nuevo nuevo .";
-      
-  }
-
-  
-}
-
 @media (max-width: 765px) {
   .content-principal {
     width: 100%;
@@ -441,9 +440,57 @@
     display: grid;
     grid-template-columns: 100%;
     grid-template-areas:
+      "nav2"
       "content"
       "nav";
     position: relative;
+  }
+
+  .content-perfil {
+    padding: 30px 0px 0px 0px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+  }
+
+  .nombre {
+    font-size: 16px;
+    padding-top: 5px;
+    display: grid;
+    margin-top: 50px;
+    grid-template-columns: 32% 190px 252px 9%;
+    grid-template-rows: 53px 38px 75px 200px;
+    grid-template-areas:
+      "imagen-perfil title_name editar confi"
+      "imagen-perfil reacciones reacciones reacciones"
+      "imagen-perfil user user user"
+      "nuevo nuevo nuevo .";
+  }
+
+  .nav2 {
+    grid-area: nav2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 96%;
+    height: 50px;
+    border-bottom: var(--border);
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .nav2 p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .nav2-icon {
+    display: flex;
   }
 
   .nav {
@@ -469,19 +516,6 @@
     display: none;
   }
 
-  .nombre {
-    font-size: 16px;
-    padding-top: 5px;
-    display: grid;
-    grid-template-columns: 30% 200px 230px 5%;
-    grid-template-rows: 53px 38px 75px 200px;
-    grid-template-areas:
-      "imagen-perfil title_name editar confi"
-      "imagen-perfil reacciones reacciones reacciones"
-      "imagen-perfil user user ."
-      "nuevo nuevo nuevo .";
-  }
-
   .editar {
     grid-area: editar;
     margin: 0px 0px 0px 0px;
@@ -498,8 +532,10 @@
     font-size: 16px;
     padding-top: 5px;
     display: grid;
-    grid-template-columns: 20% 185px 252px;
-    grid-template-rows: 53px 38px 50px 130px 60px;
+    width: auto;
+    margin-left: 10px;
+    grid-template-columns: 110px 190px auto;
+    grid-template-rows: 53px 38px 50px 130px auto;
     grid-template-areas:
       "imagen-perfil title_name confi"
       "imagen-perfil editar editar"
@@ -507,22 +543,29 @@
       "nuevo nuevo nuevo "
       "reacciones reacciones reacciones";
   }
+
   .reacciones {
     grid-area: reacciones;
     display: flex;
     justify-content: space-evenly;
-    
+    align-items: center;
+  }
+
+  .reacciones p {
+    margin: 0px;
   }
 
   .pge .publi,
   .etiqueta,
-  .guar,.insta {
+  .guar,
+  .insta {
     display: none;
   }
 
   .ico-pge {
     width: 24px;
     height: 24px;
+    margin-left: 50px;
   }
 
   .pge-content {
@@ -541,10 +584,9 @@
   }
   .imagen-perfil {
     grid-area: imagen-perfil;
-    width: 100%;
+    width: 150px;
     height: 150px;
-    display: flex;
-    justify-content: center;
+    padding: 0px;
   }
 
   .imagen-perfil img {
@@ -558,7 +600,39 @@
     grid-area: nuevo;
     margin: 0px;
     padding-left: 0px;
+    width: 80%;
   }
 
- 
+  .nue {
+    width: 64px;
+    height: 64px;
+    
+  }
+
+  .nuevo p {
+    font-size: 12px;
+    padding-left: 12px;
+    font-weight: bold;
+  }
+  .pge-content {
+    margin: 0px;
+  }
+}
+
+@media (max-width: 407px) {
+  .nombre {
+    font-size: 16px;
+    padding-top: 5px;
+    display: grid;
+    width: auto;
+    margin-left: 30px;
+    grid-template-columns: 110px 190px auto;
+    grid-template-rows: 53px 38px 50px 130px auto;
+    grid-template-areas:
+      "imagen-perfil title_name confi"
+      "imagen-perfil editar editar"
+      "user user user"
+      "nuevo nuevo nuevo "
+      "reacciones reacciones reacciones";
+  }
 }
